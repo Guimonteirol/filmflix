@@ -1,0 +1,8 @@
+ng new filmflix
+ng add @angular/material
+npm install -g firebase-tools
+firebase login
+ng add @angular/fire y/
+
+
+Para usar o ngModel em um campo, precisa de um name;
