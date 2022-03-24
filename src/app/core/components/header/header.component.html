@@ -1,3 +1,24 @@
 <mat-toolbar>
-  <span>FX</span>
-  </mat-toolbar>
+  <img src="../../../../assets/logo-minimal.png" alt="Brand" height="28" />
+  <span class="spacer"></span>
+
+  <ng-template #unlogged>
+    <a mat-button routerLink="/auth/login" routerLinkActive="mat-accent">Login</a>
+    <a mat-button routerLink="/auth/registro" routerLinkActive="mat-accent"
+      >Registro</a
+    >
+  </ng-template>
+
+  <div *ngIf="user$ | async as user; else unlogged" class="user-menu">
+    <img
+      class="avatar"
+      [src]="user.profile"
+      alt="Avatar"
+      routerLink="/perfil"
+      routerLinkActive="avatar-active"
+    />
+    <button mat-icon-button>
+      <mat-icon (click)="logout()">logout</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
