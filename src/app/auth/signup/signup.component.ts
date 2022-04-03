@@ -14,7 +14,7 @@ export class SignupComponent implements OnInit {
   @ViewChild('signup') signupForm!: NgForm;
 
   onSubmit(){
-    const values = this.signupForm.value //todos os campos do forms
+    const values = this.signupForm.value
 
     const user: User = {
       email: values.email,
